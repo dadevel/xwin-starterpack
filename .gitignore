@@ -1,0 +1,7 @@
+/bin/
+/xwin/
+/.xwin-cache/
+/compile_commands.json
+/*.elf
+/*.exe
+/*.pdb

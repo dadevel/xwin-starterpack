@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Linux",
+            "type": "lldb-dap",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.dbg.elf",
+            "initCommands": [
+                "platform select host"
+            ],
+            "preRunCommands": [
+                "breakpoint set -n main"
+            ],
+            "preLaunchTask": "Build Linux"
+        },
+        {
+            "name": "Debug Windows",
+            "type": "lldb-dap",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.dbg.exe",
+            "initCommands": [
+                "platform select remote-windows",
+                "platform connect connect://localhost:1234",
+                "settings set target.inherit-env false"
+            ],
+            "preRunCommands": [
+                "breakpoint set -n main"
+            ],
+            "preLaunchTask": "Build Windows"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Linux",
+            "type": "process",
+            "command": "make",
+            "args": ["main.dbg.elf"],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "revealProblems": "onProblem",
+            }
+        },
+        {
+            "label": "Build Windows",
+            "type": "process",
+            "command": "make",
+            "args": ["main.dbg.exe"],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "revealProblems": "onProblem",
+            }
+        }
+    ]
+}

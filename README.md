@@ -1,13 +1,6 @@
 # xwin-starterpack
 
-Download the Windows SDK with [xwin](https://github.com/jake-shadle/xwin/).
-
-~~~ bash
-mkdir ./bin
-XWIN_VERSION=0.6.7
-curl -sSf -L https://github.com/jake-shadle/xwin/releases/download/$XWIN_VERSION/xwin-$XWIN_VERSION-x86_64-unknown-linux-musl.tar.gz | tar -xz -C ./bin --strip-components=1 xwin-$XWIN_VERSION-x86_64-unknown-linux-musl/xwin
-./bin/xwin --accept-license --arch x86_64 splat --output ./xwin
-~~~
+> Develop and debug Windows software on Linux with the power of [Clang](https://clang.llvm.org/) and [Xwin](https://github.com/jake-shadle/xwin/).
 
 Install LLVM and OpenSSH in a Windows VM.
 
@@ -36,7 +29,7 @@ cd C:\Build
 & "C:\Program Files\LLVM\bin\lldb-server.exe" platform --server --listen 1234 --gdbserver-port 2345
 ~~~
 
-Back on Linux open this project in Visual Studio Code and follow the *Reopen in Container* recommendation.
+Back on Linux open this project in Visual Studio Code and confirm the *Reopen in Container* recommendation.
 
 ~~~ bash
 code .
@@ -47,6 +40,9 @@ When you are using Podman instead of Docker you need an additional environment v
 ~~~ bash
 DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock code .
 ~~~
+
+That's it.
+Now you are ready to go.
 
 References:
 

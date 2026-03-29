@@ -2,14 +2,14 @@
 #include <format>
 #include <string>
 
-#if defined(_WIN32)
+#ifdef _WIN32
 #include <windows.h>
 #pragma comment(lib, "user32")
 #pragma comment(lib, "ucrt")
 #endif
 
 void greet(char* greeter) {
-    static constexpr std::string greeting = "Hello World!";
+    static std::string greeting = "Hello World!";
     const auto text = std::format("{} says: {}", greeter, greeting);
     std::puts(text.data());
 #ifdef _WIN32

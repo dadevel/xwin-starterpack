@@ -2,23 +2,36 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug Linux",
+            "name": "Debug Linux x86",
             "type": "lldb-dap",
             "request": "launch",
-            "program": "${workspaceFolder}/main.dbg.elf",
+            "program": "${workspaceFolder}/out/main.x86.dbg.elf",
             "initCommands": [
                 "platform select host"
             ],
             "preRunCommands": [
                 "breakpoint set -n main"
             ],
-            "preLaunchTask": "Build Linux"
+            "preLaunchTask": "Build Linux x86"
         },
         {
-            "name": "Debug Windows",
+            "name": "Debug Linux AMD64",
             "type": "lldb-dap",
             "request": "launch",
-            "program": "${workspaceFolder}/main.dbg.exe",
+            "program": "${workspaceFolder}/out/main.amd64.dbg.elf",
+            "initCommands": [
+                "platform select host"
+            ],
+            "preRunCommands": [
+                "breakpoint set -n main"
+            ],
+            "preLaunchTask": "Build Linux AMD64"
+        },
+        {
+            "name": "Debug Windows x86",
+            "type": "lldb-dap",
+            "request": "launch",
+            "program": "${workspaceFolder}/out/main.x86.dbg.exe",
             "initCommands": [
                 "platform select remote-windows",
                 "platform connect connect://localhost:1234",
@@ -27,7 +40,22 @@
             "preRunCommands": [
                 "breakpoint set -n main"
             ],
-            "preLaunchTask": "Build Windows"
+            "preLaunchTask": "Build Windows x86"
+        },
+                {
+            "name": "Debug Windows AMD64",
+            "type": "lldb-dap",
+            "request": "launch",
+            "program": "${workspaceFolder}/out/main.amd64.dbg.exe",
+            "initCommands": [
+                "platform select remote-windows",
+                "platform connect connect://localhost:1234",
+                "settings set target.inherit-env false"
+            ],
+            "preRunCommands": [
+                "breakpoint set -n main"
+            ],
+            "preLaunchTask": "Build Windows AMD64"
         }
     ]
 }

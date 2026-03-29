@@ -2,10 +2,12 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build Linux",
+            "label": "Build Linux x86",
             "type": "process",
             "command": "make",
-            "args": ["main.dbg.elf"],
+            "args": [
+                "out/main.x86.dbg.elf"
+            ],
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -13,14 +15,33 @@
             },
             "presentation": {
                 "reveal": "always",
-                "revealProblems": "onProblem",
+                "revealProblems": "onProblem"
             }
         },
         {
-            "label": "Build Windows",
+            "label": "Build Linux AMD64",
             "type": "process",
             "command": "make",
-            "args": ["main.dbg.exe"],
+            "args": [
+                "out/main.amd64.dbg.elf"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "revealProblems": "onProblem"
+            }
+        },
+        {
+            "label": "Build Windows x86",
+            "type": "process",
+            "command": "make",
+            "args": [
+                "out/main.x86.dbg.exe"
+            ],
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -28,7 +49,24 @@
             },
             "presentation": {
                 "reveal": "always",
-                "revealProblems": "onProblem",
+                "revealProblems": "onProblem"
+            }
+        },
+        {
+            "label": "Build Windows AMD64",
+            "type": "process",
+            "command": "make",
+            "args": [
+                "out/main.amd64.dbg.exe"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "revealProblems": "onProblem"
             }
         }
     ]

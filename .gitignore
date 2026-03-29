@@ -1,7 +1,4 @@
-/bin/
-/xwin/
 /.xwin-cache/
+/out/
 /compile_commands.json
-/*.elf
-/*.exe
-/*.pdb
+/compile_commands.events.json
